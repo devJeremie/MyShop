@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Shop</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div class="container my-5">
-        <h2>List of Clients</h2>
+        <h2>Liste des clients</h2>
         <a href="/myshop/createClient.php" class="btn btn-primary" role="button">New Client</a>
         <br>
         <table class="table">
@@ -54,7 +55,7 @@
                                 <td>$row[adress]</td>
                                 <td>$row[created_at]</td>
                                 <td>
-                                    <a class='btn btn-primary btn-sm' href='/myshop/editClient.php?id=$row[id]'>Modifier</a>
+                                    <a class='btn btn-primary btn-sm' href='/myshop/updateClient.php?id=$row[id]'>Modifier</a>
                                     <a class='btn btn-danger btn-sm' href='/myshop/deleteClient.php?id=$row[id]'>Supprimer</a>
                                 </td>
                             </tr>
