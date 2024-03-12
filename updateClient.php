@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $id = $_GET["id"]; 
 
     //lis les lignes du client selectionné en base de données
-    $sql = "SELECT * FROM clients  WHERE id = $id";
+    $sql = "SELECT * FROM clients WHERE id = $id";
     $result = $connection->query($sql);//execute la requete
     $row = $result->fetch_assoc();//lis les données de la database 
     
@@ -47,19 +47,19 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     else{
     //methode post : modifie les données du client
     $id = $_POST['id'];
-    $name = $_POST['nom'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
-    $phone = $_POST['telephone'];
-    $adress = $_POST['adresse'];
+    $phone = $_POST['phone'];
+    $adress = $_POST['adress'];
     //verifie si champ vide et si oui  m'essage d'erreur
     do {
         if (empty($id) || empty($name) || empty($email) || empty($phone) || empty($adress) ) {
             $errorMessage = 'Veuillez remplir tout les champs.';
             break;
         }//Requête d'update des données
-        $sql = "UPDATE clients" .
-                "SET name = '$name', email = '$email, phone = '$phone', adress = '$adress' ".
-                "WHERE id= $id ";
+        $sql = "UPDATE clients
+                SET name = '$name', email = '$email', phone = '$phone', adress = '$adress' 
+                WHERE id= $id";
         //execution de la requete
         $result = $connection->query($sql);
         //Si erreur envoie d'un message d'erreur
@@ -71,6 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
         $successMessage ="Modification réussie";
 
         header("location: /myshop/index.php");
+        exit;
 
     }while(false);
 }
@@ -101,7 +102,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             }
         ?>
         <form method="post">
-            <input type="hidden" name="id"<?php echo $id; ?>">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Nom</label>
                 <div class="col-sm-6">
