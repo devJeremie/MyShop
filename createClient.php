@@ -108,10 +108,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
 
-            <?php 
+           <?php 
                 if(!empty($successMessage)) {
                     echo "
-                    <div class='row mb-3>
+                    <div class='row mb-3'>
                         <div class='offset-sm-3 col-sm-6'>
                             <div class='alert alert-success alert-dismissible fade show' role='alert'>
                                 <strong>$successMessage</strong>
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     ";
                 }
             
-            ?>
+            ?> 
 
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
