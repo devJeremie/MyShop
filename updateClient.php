@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $adress = $_POST['adress'];
-    //verifie si champ vide et si oui  m'essage d'erreur
+    //verifie si champ vide et si oui message d'erreur
     do {
         if (empty($id) || empty($name) || empty($email) || empty($phone) || empty($adress) ) {
             $errorMessage = 'Veuillez remplir tout les champs.';
@@ -89,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 </head>
 <body>
     <div class="container my-5">
-        <h2>Nouveau client</h2>
+        <h2>Modification client</h2>
         <!--Affichage message d'erreur-->
         <?php 
             if (!empty($errorMessage)) {
